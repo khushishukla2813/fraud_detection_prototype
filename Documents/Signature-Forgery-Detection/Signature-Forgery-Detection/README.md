@@ -1,5 +1,5 @@
 # Signature Forgery Detection Documentation
-## Video Explaination of the Project : [YouTube Link](https://youtu.be/Lr-kdXCNXko) 
+
 
 ## Overview
 
