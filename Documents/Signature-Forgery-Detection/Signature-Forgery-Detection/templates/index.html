@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCrafter - Fraud Detection</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header>
+        <h1>CodeCrafter - Fraud & Signature Detection</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('image-detection')">Image Detection</a></li>
+                <li><a href="#" onclick="showSection('fraud-detection')">Fraud Detection</a></li>
+                <li><a href="#" onclick="showSection('signature-verification')">Signature Verification</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="image-detection" class="content">
+        <h2>Image Detection</h2>
+        <div class="image-container">
+            <video id="camera-feed" autoplay></video>
+            <canvas id="captured-image"></canvas>
+        </div>
+        <input type="file" id="imageUpload" accept="image/*">
+        <button onclick="captureImage()">Take Picture</button>
+        <button id="upload-btn">Upload</button>
+        <button onclick="retakeImage()">Take Another</button>
+        <p id="image-result"></p>
+    </section>
+
+    <section id="fraud-detection" class="content">
+        <h2>Fraud Detection</h2>
+        <form id="fraud-form">
+            <label>Name:</label>
+            <input type="text" id="name">
+            <label>ID Number:</label>
+            <input type="text" id="id-number">
+            <button type="button" onclick="detectFraud()">Check Fraud</button>
+        </form>
+        <p id="fraud-result"></p>
+    </section>
+
+    <section id="signature-verification" class="content">
+        <h2>Signature Verification</h2>
+        <label>Source Signature:</label>
+        <input type="file" id="source-signature">
+        <label>Test Signature:</label>
+        <input type="file" id="test-signature">
+        <button onclick="verifySignature()">Verify Signature</button>
+        <p id="signature-result"></p>
+    </section>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>

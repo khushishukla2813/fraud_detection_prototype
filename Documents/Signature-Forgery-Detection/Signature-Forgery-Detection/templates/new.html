@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCrafter - Image, Fraud & Signature Detection</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CodeCrafter - Image, Fraud & Signature Detection</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('image-detection')">Image Detection</a></li>
+                <li><a href="#" onclick="showSection('fraud-detection')">Fraud Detection</a></li>
+                <li><a href="#" onclick="showSection('signature-verification')">Signature Verification</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- IMAGE DETECTION -->
+    <section id="image-detection" class="content">
+        <h2>Image Detection</h2>
+        
+        <button id="start-camera">Take Picture</button>
+        <input type="file" id="gallery-upload" accept="image/*">
+        
+        <div id="camera-container" class="hidden">
+            <video id="camera-feed" autoplay></video>
+            <button id="capture-btn">Capture</button>
+        </div>
+
+        <canvas id="captured-image" class="hidden"></canvas>
+        <img id="uploaded-image" class="hidden">
+
+        <div id="image-controls" class="hidden">
+            <button id="upload-btn">Upload</button>
+            <button id="retake-btn">Try Again</button>
+        </div>
+
+        <button id="predict-btn" class="hidden">Predict</button>
+        <p id="image-result"></p>
+    </section>
+
+    <!-- FRAUD DETECTION -->
+    <section id="fraud-detection" class="content hidden">
+        <h2>Fraud Detection</h2>
+        <form id="fraud-form">
+            <input type="text" id="name" placeholder="Name" required><br>
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="number" id="transaction_amount" placeholder="Transaction Amount" required><br>
+            <input type="number" id="months_as_customer" placeholder="Months as Customer" required><br>
+            <input type="number" id="age" placeholder="Age" required><br>
+            <input type="number" id="policy_deductible" placeholder="Policy Deductible" required><br>
+            <input type="number" id="policy_annual_premium" placeholder="Annual Premium" required><br>
+            <input type="number" id="umbrella_limit" placeholder="Umbrella Limit" required><br>
+            <input type="text" id="insured_education_level" placeholder="Insured Education Level" required><br>
+            <input type="text" id="insured_occupation" placeholder="Insured Occupation" required><br>
+            
+            <select id="incident_type" required>
+                <option value="">Select Incident Type</option>
+                <option value="single">Single Vehicle</option>
+                <option value="multi">Multiple Vehicles</option>
+                <option value="theft">Vehicle Theft</option>
+            </select><br>
+
+            <select id="collision_type" required>
+                <option value="">Select Collision Type</option>
+                <option value="front">Front Collision</option>
+                <option value="rear">Rear Collision</option>
+                <option value="side">Side Collision</option>
+            </select><br>
+
+            <select id="incident_severity" required>
+                <option value="">Select Incident Severity</option>
+                <option value="minor">Minor Damage</option>
+                <option value="moderate">Moderate Damage</option>
+                <option value="major">Major Damage</option>
+                <option value="total_loss">Total Loss</option>
+            </select><br>
+
+            <select id="authorities_contacted" required>
+                <option value="">Authorities Contacted?</option>
+                <option value="none">None</option>
+                <option value="police">Police</option>
+                <option value="fire">Fire Department</option>
+                <option value="ambulance">Ambulance</option>
+            </select><br>
+
+            <input type="number" id="number_of_vehicles_involved" placeholder="Number of Vehicles Involved" required><br>
+
+            <button type="submit">Check Fraud</button>
+        </form>
+        <p id="fraud-result"></p>
+    </section>
+    
+
+    <!-- SIGNATURE VERIFICATION -->
+    <section id="signature-verification" class="content hidden">
+        <h2>Signature Verification</h2>
+        <label>Upload Source Signature:</label>
+        <input type="file" id="source-signature"><br>
+
+        <label>Upload Test Signature:</label>
+        <input type="file" id="test-signature"><br>
+
+        <button id="verify-signature">Verify Signature</button>
+        <p id="signature-result"></p>
+    </section>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>
